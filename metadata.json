@@ -1,0 +1,6 @@
+{
+  "name": "ប្រព័ន្ធគ្រប់គ្រងការបង់ប្រាក់សិស្ស",
+  "description": "កម្មវិធីគ្រប់គ្រងការបង់ប្រាក់សិស្សរៀនក្រៅម៉ោង បញ្ជីសិស្ស ថ្នាក់រៀន និងវិក្កយបត្រ",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,263 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Teacher or extra-class administrator profile",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 200
+        },
+        "schoolName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 140
+        },
+        "defaultCurrency": {
+          "type": "string",
+          "enum": ["USD", "KHR"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "displayName", "email", "schoolName", "defaultCurrency", "createdAt", "updatedAt"]
+    },
+    "ClassGroup": {
+      "title": "ClassGroup",
+      "description": "A part-time or extra-class subject group",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "schedule": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "feeAmount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["USD", "KHR"]
+        },
+        "billingCycle": {
+          "type": "string",
+          "enum": ["monthly", "session"]
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["ownerId", "name", "schedule", "feeAmount", "currency", "billingCycle", "isActive", "createdAt", "updatedAt"]
+    },
+    "Student": {
+      "title": "Student",
+      "description": "Enrolled extra-class student record",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "studentCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "fullName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "gender": {
+          "type": "string",
+          "enum": ["male", "female"]
+        },
+        "parentPhone": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "classId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "className": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "monthlyFee": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["USD", "KHR"]
+        },
+        "dueDay": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "paused"]
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["ownerId", "studentCode", "fullName", "gender", "parentPhone", "classId", "className", "monthlyFee", "currency", "dueDay", "status", "notes", "createdAt", "updatedAt"]
+    },
+    "Payment": {
+      "title": "Payment",
+      "description": "Tuition fee payment transaction and receipt",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "receiptNo": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "studentId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "studentName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "classId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "className": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "billingMonth": {
+          "type": "string",
+          "minLength": 7,
+          "maxLength": 7,
+          "pattern": "^[0-9]{4}-[0-9]{2}$"
+        },
+        "amountPaid": {
+          "type": "number"
+        },
+        "expectedAmount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string",
+          "enum": ["USD", "KHR"]
+        },
+        "method": {
+          "type": "string",
+          "enum": ["cash", "khqr", "transfer"]
+        },
+        "paymentStatus": {
+          "type": "string",
+          "enum": ["paid", "partial"]
+        },
+        "paidDate": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 10,
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["ownerId", "receiptNo", "studentId", "studentName", "classId", "className", "billingMonth", "amountPaid", "expectedAmount", "currency", "method", "paymentStatus", "paidDate", "note", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Teacher/admin profile settings and school name"
+    },
+    "/classes/{classId}": {
+      "schema": { "$ref": "#/entities/ClassGroup" },
+      "description": "Part-time classes and subjects managed by the owner"
+    },
+    "/students/{studentId}": {
+      "schema": { "$ref": "#/entities/Student" },
+      "description": "Students enrolled in extra classes owned by the teacher"
+    },
+    "/payments/{paymentId}": {
+      "schema": { "$ref": "#/entities/Payment" },
+      "description": "Tuition payment transactions and receipts"
+    }
+  }
+}
