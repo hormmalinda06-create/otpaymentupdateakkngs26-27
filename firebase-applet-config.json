@@ -1,12 +1,9 @@
+
 {
-  "projectId": "gen-lang-client-0814419698",
-  "appId": "1:989613015839:web:1f4f4053303a265c6fa62a",
-  "apiKey": "AIzaSyD1SHcE2Drh54z0Br2ZKjs5TCO3qYxYuEw",
-  "authDomain": "gen-lang-client-0814419698.firebaseapp.com",
-  "firestoreDatabaseId": "ai-studio-ffec53ab-e637-4387-a546-f5708a7cbd39",
-  "storageBucket": "gen-lang-client-0814419698.firebasestorage.app",
-  "messagingSenderId": "989613015839",
-  "measurementId": "",
-  "oAuthClientId": "989613015839-qro5b0hs79g9t193osegb73o3dtgod7e.apps.googleusercontent.com",
-  "recaptchaSiteKey": ""
+  "apiKey": "YOUR_FIREBASE_API_KEY",
+  "authDomain": "tutorpay-sheets.firebaseapp.com",
+  "projectId": "tutorpay-sheets",
+  "storageBucket": "tutorpay-sheets.firebasestorage.app",
+  "messagingSenderId": "931373434911",
+  "appId": "1:931373434911:web:44a5fffdef2bed4f42ad2a"
 }
